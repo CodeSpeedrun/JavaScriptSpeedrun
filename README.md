@@ -166,11 +166,235 @@ In the example above, this is the person object that "owns" the fullName functio
 
 In other words, this.firstName means the firstName property of this object.
 ```xxx
-
+When using the === operator, x and y are not equal:
+Comparing two JavaScript objects always returns false.
 ```
 
 ##JavaScript Events
+onchange	An HTML element has been changed
+onclick	The user clicks an HTML element
+onmouseover	The user moves the mouse over an HTML element
+onmouseout	The user moves the mouse away from an HTML element
+onkeydown	The user pushes a keyboard key
+onload	The browser has finished loading the page
+```xxx
+String length
+String slice()
+String substring()
+String substr()
+String replace()
+String replaceAll()
+String toUpperCase()
+String toLowerCase()
+String concat()
+String trim()
+String trimStart()
+String trimEnd()
+String padStart()
+String padEnd()
+String charAt()
+String charCodeAt()
+String split()
 
+let text = "Apple, Banana, Kiwi";
+let part = text.slice(-12);
+
+let text = "Please visit Microsoft!";
+let newText = text.replace("Microsoft", "W3Schools");
+
+let text = "HELLO WORLD";
+text[0] = "A";    // Gives no error, but does not work
+```
+
+## JavaScript Arrays
+Arrays are a special type of objects. The typeof operator in JavaScript returns "object" for arrays.
+You can also use the Array.forEach() function:
+
+fruits.push("Lemon");  // Adds a new element (Lemon) to fruits
+fruits[fruits.length] = "Lemon";  // Adds "Lemon" to fruits
+
+In JavaScript, arrays use numbered indexes.  
+In JavaScript, objects use named indexes.
+```xxx
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Arrays</h2>
+
+<p>The best way to loop through an array is using a standard for loop:</p>
+
+<p id="demo"></p>
+
+<script>
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let fLen = fruits.length;
+
+let text = "<ul>";
+for (let i = 0; i < fLen; i++) {
+  text += "<li>" + fruits[i] + "</li>";
+}
+text += "</ul>";
+
+document.getElementById("demo").innerHTML = text;
+</script>
+
+</body>
+</html>
+
+```
+
+## JavaScript if .. else
+```xxx
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript if .. else</h2>
+
+<p>A time-based greeting:</p>
+
+<p id="demo"></p>
+
+<script>
+const time = new Date().getHours();
+let greeting;
+if (time < 10) {
+  greeting = "Good morning";
+} else if (time < 20) {
+  greeting = "Good day";
+} else {
+  greeting = "Good evening";
+}
+document.getElementById("demo").innerHTML = greeting;
+</script>
+
+</body>
+</html>
+```
+
+## JavaScript switch
+
+```xxx
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript switch</h2>
+
+<p id="demo"></p>
+
+<script>
+let x = "0";
+
+switch (x) {
+  case 0:
+    text = "Off";
+    break;
+  case 1:
+    text = "On";
+    break;
+  default:
+    text = "No value found";
+}
+document.getElementById("demo").innerHTML = text;
+</script>
+
+</body>
+</html>
+```
+
+## JavaScript Errors
+The try statement defines a code block to run (to try).
+
+The catch statement defines a code block to handle any error.
+
+The finally statement defines a code block to run regardless of the result.
+
+The throw statement defines a custom error.
+```xxx
+hello = function() {
+  return "Hello World!";
+}
+
+hello = () => {
+  return "Hello World!";
+}
+
+hello = () => "Hello World!";
+hello = (val) => "Hello " + val;
+
+With a regular function this represents the object that calls the function:
+// Regular Function:
+hello = function() {
+  document.getElementById("demo").innerHTML += this;
+}
+// The window object calls the function:
+window.addEventListener("load", hello);
+// A button object calls the function:
+document.getElementById("btn").addEventListener("click", hello);
+
+With an arrow function this represents the owner of the function:
+// Arrow Function:
+hello = () => {
+  document.getElementById("demo").innerHTML += this;
+}
+// The window object calls the function:
+window.addEventListener("load", hello);
+// A button object calls the function:
+document.getElementById("btn").addEventListener("click", hello);
+
+```
+
+## JavaScript Class Method
+
+
+```xxx
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Class Method</h2>
+
+<p>Pass a parameter into the "age()" method.</p>
+
+<p id="demo"></p>
+
+<script>
+class Car {
+  constructor(name, year) {
+    this.name = name;
+    this.year = year;
+  }
+  age(x) {
+    return x - this.year;
+  }
+}
+
+let date = new Date();
+let year = date.getFullYear();
+
+let myCar = new Car("Ford", 2014);
+document.getElementById("demo").innerHTML=
+"My car is " + myCar.age(year) + " years old.";
+</script>
+
+</body>
+</html>
+
+```
+
+##
+```xxx
+
+```
+
+##
+```xxx
+
+```
+
+##
 ```xxx
 
 ```
